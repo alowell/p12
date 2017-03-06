@@ -39,6 +39,10 @@ class Parameter(object):
 
 	def make_nrpn_runiform_msg(self,channel,rlow,rhigh):
 		r = int(np.round(np.random.uniform(rlow,rhigh)))
+		if r > self.high:
+			r = self.high
+		elif r < self.low:
+			r = self.low
 		return self.make_nrpn_msg(channel,val=r)
 
 	def make_nrpn_rgauss_msg(self,channel,mean,sigma):
