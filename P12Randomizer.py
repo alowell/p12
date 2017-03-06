@@ -360,6 +360,10 @@ ParameterList = [
 	Parameter('arpvelocity30',362,875,0,127)
 	Parameter('arpvelocity31',363,876,0,127)
 	Parameter('arpvelocity32',364,877,0,127)
+	Parameter('delay1pan',427,939,0,127)
+	Parameter('delay2pan',428,940,0,127)
+	Parameter('delay3pan',429,941,0,127)
+	Parameter('delay4pan',430,942,0,127)
 ]
 
 ParameterDict = {p.name:p for p in ParameterList}
