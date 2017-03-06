@@ -1,5 +1,2 @@
-lpffrequency	u	40	60
-osc1shapemod	u	70	90
-osc2shapemod	u	70	90
-osc3shapemod	u	60	115
-lpfresonance	u	15	26
+lpffrequency	u	45	50
+lpfresonance	u	10	15

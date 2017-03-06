@@ -5,7 +5,7 @@ from P12Randomizer import ParameterDict
 p = ArgumentParser(description='randomize prophet 12 parameters from a file')
 p.add_argument('file',help='file containing randomization specification')
 p.add_argument('--midi_info',action='store_true',help='list the midi info, then exit')
-p.add_argument('--channel',type=int,help='midi channel to send on',default=1)
+p.add_argument('--channel',type=int,help='midi channel to send on',default=0)
 p.add_argument('--device_id',type=int,help='integer device id, get device info by using option --midi_info.  if this option is not specified, the default as  returned by pygame.midi will be used')
 a = p.parse_args()
 midi.init()
@@ -14,6 +14,11 @@ if a.midi_info:
 	for i in xrange(midi.get_count()):
 		print midi.get_device_info(i)
 	exit(0)
+
+a.channel -= 1
+if a.channel < 0 or a.channel > 15:
+	print 'bad channel number, must be 1-16...'
+	exit(-1)
 
 if a.device_id is None:
 	d = midi.get_default_output_id()
