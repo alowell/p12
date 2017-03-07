@@ -55,7 +55,7 @@ while 1:
 	if inp == 'q':
 		m.close()
 		exit(0)
-	elif inp == 'r':
+	elif inp == 'r' or inp == '':
 		for x in pt:
 			if ParameterDict.has_key(x[0]):
 				if x[1] == 'u':
